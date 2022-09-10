@@ -43,11 +43,11 @@
 
 
 <!--                       <table tableName="user"/>-->
-<!--        <table tableName="belong"/>-->
+        <table tableName="belong"/>
 <!--        <table tableName="store"/>-->
 <!--        <table tableName="goods"/>-->
 
-        <table tableName="stock"/>
+<!--        <table tableName="stock"/>-->
 
 <!--        <table tableName="buy"/>-->
 

@@ -18,7 +18,13 @@ public interface BelongMapper {
 
     List<Belong> selectByExample(BelongExample example);
 
+    Belong selectByPrimaryKey(@Param("sId") Long sId, @Param("uId") Long uId);
+
     int updateByExampleSelective(@Param("record") Belong record, @Param("example") BelongExample example);
 
     int updateByExample(@Param("record") Belong record, @Param("example") BelongExample example);
+
+    int updateByPrimaryKeySelective(Belong record);
+
+    int updateByPrimaryKey(Belong record);
 }

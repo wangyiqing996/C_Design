@@ -1,9 +1,13 @@
 package com.example.c_design.req;
 
+import java.util.Date;
+
 public class BelongQueryReq {
     private Long sId;
 
     private Long uId;
+
+    private Date time;
 
     public Long getsId() {
         return sId;
@@ -21,6 +25,14 @@ public class BelongQueryReq {
         this.uId = uId;
     }
 
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -29,6 +41,7 @@ public class BelongQueryReq {
         sb.append("Hash = ").append(hashCode());
         sb.append(", sId=").append(sId);
         sb.append(", uId=").append(uId);
+        sb.append(", time=").append(time);
         sb.append("]");
         return sb.toString();
     }
