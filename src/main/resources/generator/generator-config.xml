@@ -43,6 +43,8 @@
 
 
                        <table tableName="user"/>
+        <table tableName="belong"/>
+
 
     </context>
 </generatorConfiguration>
