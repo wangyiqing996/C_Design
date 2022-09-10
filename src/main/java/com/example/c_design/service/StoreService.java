@@ -31,14 +31,14 @@ public class StoreService {
         StoreExample storeExample = new StoreExample();
         StoreExample.Criteria criteria = storeExample.createCriteria();
 
-        List<Store> ebookList = storeMapper.selectByExample(storeExample);
+        List<Store> storeList = storeMapper.selectByExample(storeExample);
 
-        PageInfo<Store> pageInfo = new PageInfo<>(ebookList);
+        PageInfo<Store> pageInfo = new PageInfo<>(storeList);
         LOG.info("总行数：{}", pageInfo.getTotal());
         LOG.info("总页数：{}", pageInfo.getPages());
 
         // 列表复制
-        List<StoreQueryResp> list = CopyUtil.copyList(ebookList, StoreQueryResp.class);
+        List<StoreQueryResp> list = CopyUtil.copyList(storeList, StoreQueryResp.class);
 
         PageResp<StoreQueryResp> pageResp = new PageResp();
         pageResp.setTotal(pageInfo.getTotal());

@@ -18,7 +18,13 @@ public interface StockMapper {
 
     List<Stock> selectByExample(StockExample example);
 
+    Stock selectByPrimaryKey(@Param("gId") Long gId, @Param("sId") Long sId);
+
     int updateByExampleSelective(@Param("record") Stock record, @Param("example") StockExample example);
 
     int updateByExample(@Param("record") Stock record, @Param("example") StockExample example);
+
+    int updateByPrimaryKeySelective(Stock record);
+
+    int updateByPrimaryKey(Stock record);
 }

@@ -42,16 +42,16 @@
 
 
 
-                       <table tableName="user"/>
-        <table tableName="belong"/>
-        <table tableName="store"/>
-        <table tableName="goods"/>
+<!--                       <table tableName="user"/>-->
+<!--        <table tableName="belong"/>-->
+<!--        <table tableName="store"/>-->
+<!--        <table tableName="goods"/>-->
 
         <table tableName="stock"/>
 
-        <table tableName="buy"/>
+<!--        <table tableName="buy"/>-->
 
-        <table tableName="customer"/>
+<!--        <table tableName="customer"/>-->
 
 
     </context>
