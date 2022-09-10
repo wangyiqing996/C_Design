@@ -10,7 +10,7 @@ public interface BelongMapper {
 
     int deleteByExample(BelongExample example);
 
-    int deleteByPrimaryKey(@Param("sId") Integer sId, @Param("uId") Integer uId);
+    int deleteByPrimaryKey(@Param("sId") Long sId, @Param("uId") Long uId);
 
     int insert(Belong record);
 

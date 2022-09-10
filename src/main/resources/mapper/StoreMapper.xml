@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.c_design.mapper.StoreMapper">
   <resultMap id="BaseResultMap" type="com.example.c_design.domain.Store">
-    <id column="s_id" jdbcType="INTEGER" property="sId" />
+    <id column="s_id" jdbcType="BIGINT" property="sId" />
     <result column="s_place" jdbcType="VARCHAR" property="sPlace" />
     <result column="s_picture" jdbcType="VARCHAR" property="sPicture" />
     <result column="s_introducetion" jdbcType="VARCHAR" property="sIntroducetion" />
@@ -84,15 +84,15 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from store
-    where s_id = #{sId,jdbcType=INTEGER}
+    where s_id = #{sId,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from store
-    where s_id = #{sId,jdbcType=INTEGER}
+    where s_id = #{sId,jdbcType=BIGINT}
   </delete>
   <delete id="deleteByExample" parameterType="com.example.c_design.domain.StoreExample">
     delete from store
@@ -104,7 +104,7 @@
     insert into store (s_id, s_place, s_picture, 
       s_introducetion, s_name, s_kind
       )
-    values (#{sId,jdbcType=INTEGER}, #{sPlace,jdbcType=VARCHAR}, #{sPicture,jdbcType=VARCHAR}, 
+    values (#{sId,jdbcType=BIGINT}, #{sPlace,jdbcType=VARCHAR}, #{sPicture,jdbcType=VARCHAR}, 
       #{sIntroducetion,jdbcType=VARCHAR}, #{sName,jdbcType=VARCHAR}, #{sKind,jdbcType=VARCHAR}
       )
   </insert>
@@ -132,7 +132,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="sId != null">
-        #{sId,jdbcType=INTEGER},
+        #{sId,jdbcType=BIGINT},
       </if>
       <if test="sPlace != null">
         #{sPlace,jdbcType=VARCHAR},
@@ -161,7 +161,7 @@
     update store
     <set>
       <if test="record.sId != null">
-        s_id = #{record.sId,jdbcType=INTEGER},
+        s_id = #{record.sId,jdbcType=BIGINT},
       </if>
       <if test="record.sPlace != null">
         s_place = #{record.sPlace,jdbcType=VARCHAR},
@@ -185,7 +185,7 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update store
-    set s_id = #{record.sId,jdbcType=INTEGER},
+    set s_id = #{record.sId,jdbcType=BIGINT},
       s_place = #{record.sPlace,jdbcType=VARCHAR},
       s_picture = #{record.sPicture,jdbcType=VARCHAR},
       s_introducetion = #{record.sIntroducetion,jdbcType=VARCHAR},
@@ -214,7 +214,7 @@
         s_kind = #{sKind,jdbcType=VARCHAR},
       </if>
     </set>
-    where s_id = #{sId,jdbcType=INTEGER}
+    where s_id = #{sId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.example.c_design.domain.Store">
     update store
@@ -223,6 +223,6 @@
       s_introducetion = #{sIntroducetion,jdbcType=VARCHAR},
       s_name = #{sName,jdbcType=VARCHAR},
       s_kind = #{sKind,jdbcType=VARCHAR}
-    where s_id = #{sId,jdbcType=INTEGER}
+    where s_id = #{sId,jdbcType=BIGINT}
   </update>
 </mapper>

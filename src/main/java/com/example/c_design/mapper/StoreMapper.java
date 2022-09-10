@@ -10,7 +10,7 @@ public interface StoreMapper {
 
     int deleteByExample(StoreExample example);
 
-    int deleteByPrimaryKey(Integer sId);
+    int deleteByPrimaryKey(Long sId);
 
     int insert(Store record);
 
@@ -18,7 +18,7 @@ public interface StoreMapper {
 
     List<Store> selectByExample(StoreExample example);
 
-    Store selectByPrimaryKey(Integer sId);
+    Store selectByPrimaryKey(Long sId);
 
     int updateByExampleSelective(@Param("record") Store record, @Param("example") StoreExample example);
 

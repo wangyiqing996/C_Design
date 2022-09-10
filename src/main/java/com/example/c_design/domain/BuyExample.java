@@ -115,52 +115,52 @@ public class BuyExample {
             return (Criteria) this;
         }
 
-        public Criteria andCIdEqualTo(Integer value) {
+        public Criteria andCIdEqualTo(Long value) {
             addCriterion("c_id =", value, "cId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdNotEqualTo(Integer value) {
+        public Criteria andCIdNotEqualTo(Long value) {
             addCriterion("c_id <>", value, "cId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdGreaterThan(Integer value) {
+        public Criteria andCIdGreaterThan(Long value) {
             addCriterion("c_id >", value, "cId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdGreaterThanOrEqualTo(Integer value) {
+        public Criteria andCIdGreaterThanOrEqualTo(Long value) {
             addCriterion("c_id >=", value, "cId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdLessThan(Integer value) {
+        public Criteria andCIdLessThan(Long value) {
             addCriterion("c_id <", value, "cId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdLessThanOrEqualTo(Integer value) {
+        public Criteria andCIdLessThanOrEqualTo(Long value) {
             addCriterion("c_id <=", value, "cId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdIn(List<Integer> values) {
+        public Criteria andCIdIn(List<Long> values) {
             addCriterion("c_id in", values, "cId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdNotIn(List<Integer> values) {
+        public Criteria andCIdNotIn(List<Long> values) {
             addCriterion("c_id not in", values, "cId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdBetween(Integer value1, Integer value2) {
+        public Criteria andCIdBetween(Long value1, Long value2) {
             addCriterion("c_id between", value1, value2, "cId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdNotBetween(Integer value1, Integer value2) {
+        public Criteria andCIdNotBetween(Long value1, Long value2) {
             addCriterion("c_id not between", value1, value2, "cId");
             return (Criteria) this;
         }
@@ -175,52 +175,52 @@ public class BuyExample {
             return (Criteria) this;
         }
 
-        public Criteria andGIdEqualTo(Integer value) {
+        public Criteria andGIdEqualTo(Long value) {
             addCriterion("g_id =", value, "gId");
             return (Criteria) this;
         }
 
-        public Criteria andGIdNotEqualTo(Integer value) {
+        public Criteria andGIdNotEqualTo(Long value) {
             addCriterion("g_id <>", value, "gId");
             return (Criteria) this;
         }
 
-        public Criteria andGIdGreaterThan(Integer value) {
+        public Criteria andGIdGreaterThan(Long value) {
             addCriterion("g_id >", value, "gId");
             return (Criteria) this;
         }
 
-        public Criteria andGIdGreaterThanOrEqualTo(Integer value) {
+        public Criteria andGIdGreaterThanOrEqualTo(Long value) {
             addCriterion("g_id >=", value, "gId");
             return (Criteria) this;
         }
 
-        public Criteria andGIdLessThan(Integer value) {
+        public Criteria andGIdLessThan(Long value) {
             addCriterion("g_id <", value, "gId");
             return (Criteria) this;
         }
 
-        public Criteria andGIdLessThanOrEqualTo(Integer value) {
+        public Criteria andGIdLessThanOrEqualTo(Long value) {
             addCriterion("g_id <=", value, "gId");
             return (Criteria) this;
         }
 
-        public Criteria andGIdIn(List<Integer> values) {
+        public Criteria andGIdIn(List<Long> values) {
             addCriterion("g_id in", values, "gId");
             return (Criteria) this;
         }
 
-        public Criteria andGIdNotIn(List<Integer> values) {
+        public Criteria andGIdNotIn(List<Long> values) {
             addCriterion("g_id not in", values, "gId");
             return (Criteria) this;
         }
 
-        public Criteria andGIdBetween(Integer value1, Integer value2) {
+        public Criteria andGIdBetween(Long value1, Long value2) {
             addCriterion("g_id between", value1, value2, "gId");
             return (Criteria) this;
         }
 
-        public Criteria andGIdNotBetween(Integer value1, Integer value2) {
+        public Criteria andGIdNotBetween(Long value1, Long value2) {
             addCriterion("g_id not between", value1, value2, "gId");
             return (Criteria) this;
         }

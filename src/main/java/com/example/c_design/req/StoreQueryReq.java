@@ -1,7 +1,7 @@
 package com.example.c_design.req;
 
 public class StoreQueryReq {
-    private Integer sId;
+    private Long sId;
 
     private String sPlace;
 
@@ -13,11 +13,11 @@ public class StoreQueryReq {
 
     private String sKind;
 
-    public Integer getsId() {
+    public Long getsId() {
         return sId;
     }
 
-    public void setsId(Integer sId) {
+    public void setsId(Long sId) {
         this.sId = sId;
     }
 

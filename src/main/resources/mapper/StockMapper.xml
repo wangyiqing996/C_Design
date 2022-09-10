@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.c_design.mapper.StockMapper">
   <resultMap id="BaseResultMap" type="com.example.c_design.domain.Stock">
-    <id column="g_id" jdbcType="INTEGER" property="gId" />
-    <id column="s_id" jdbcType="INTEGER" property="sId" />
+    <id column="g_id" jdbcType="BIGINT" property="gId" />
+    <id column="s_id" jdbcType="BIGINT" property="sId" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -82,8 +82,8 @@
   </select>
   <delete id="deleteByPrimaryKey" parameterType="map">
     delete from stock
-    where g_id = #{gId,jdbcType=INTEGER}
-      and s_id = #{sId,jdbcType=INTEGER}
+    where g_id = #{gId,jdbcType=BIGINT}
+      and s_id = #{sId,jdbcType=BIGINT}
   </delete>
   <delete id="deleteByExample" parameterType="com.example.c_design.domain.StockExample">
     delete from stock
@@ -93,7 +93,7 @@
   </delete>
   <insert id="insert" parameterType="com.example.c_design.domain.Stock">
     insert into stock (g_id, s_id)
-    values (#{gId,jdbcType=INTEGER}, #{sId,jdbcType=INTEGER})
+    values (#{gId,jdbcType=BIGINT}, #{sId,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.example.c_design.domain.Stock">
     insert into stock
@@ -107,10 +107,10 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="gId != null">
-        #{gId,jdbcType=INTEGER},
+        #{gId,jdbcType=BIGINT},
       </if>
       <if test="sId != null">
-        #{sId,jdbcType=INTEGER},
+        #{sId,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
@@ -124,10 +124,10 @@
     update stock
     <set>
       <if test="record.gId != null">
-        g_id = #{record.gId,jdbcType=INTEGER},
+        g_id = #{record.gId,jdbcType=BIGINT},
       </if>
       <if test="record.sId != null">
-        s_id = #{record.sId,jdbcType=INTEGER},
+        s_id = #{record.sId,jdbcType=BIGINT},
       </if>
     </set>
     <if test="_parameter != null">
@@ -136,8 +136,8 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update stock
-    set g_id = #{record.gId,jdbcType=INTEGER},
-      s_id = #{record.sId,jdbcType=INTEGER}
+    set g_id = #{record.gId,jdbcType=BIGINT},
+      s_id = #{record.sId,jdbcType=BIGINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

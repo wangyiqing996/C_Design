@@ -1,23 +1,23 @@
 package com.example.c_design.req;
 
 public class BelongQueryReq {
-    private Integer sId;
+    private Long sId;
 
-    private Integer uId;
+    private Long uId;
 
-    public Integer getsId() {
+    public Long getsId() {
         return sId;
     }
 
-    public void setsId(Integer sId) {
+    public void setsId(Long sId) {
         this.sId = sId;
     }
 
-    public Integer getuId() {
+    public Long getuId() {
         return uId;
     }
 
-    public void setuId(Integer uId) {
+    public void setuId(Long uId) {
         this.uId = uId;
     }
 

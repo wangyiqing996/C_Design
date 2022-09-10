@@ -1,23 +1,23 @@
 package com.example.c_design.req;
 
 public class StockQueryReq {
-    private Integer gId;
+    private Long gId;
 
-    private Integer sId;
+    private Long sId;
 
-    public Integer getgId() {
+    public Long getgId() {
         return gId;
     }
 
-    public void setgId(Integer gId) {
+    public void setgId(Long gId) {
         this.gId = gId;
     }
 
-    public Integer getsId() {
+    public Long getsId() {
         return sId;
     }
 
-    public void setsId(Integer sId) {
+    public void setsId(Long sId) {
         this.sId = sId;
     }
 

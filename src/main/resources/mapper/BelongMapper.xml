@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.c_design.mapper.BelongMapper">
   <resultMap id="BaseResultMap" type="com.example.c_design.domain.Belong">
-    <id column="s_id" jdbcType="INTEGER" property="sId" />
-    <id column="u_id" jdbcType="INTEGER" property="uId" />
+    <id column="s_id" jdbcType="BIGINT" property="sId" />
+    <id column="u_id" jdbcType="BIGINT" property="uId" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -82,8 +82,8 @@
   </select>
   <delete id="deleteByPrimaryKey" parameterType="map">
     delete from belong
-    where s_id = #{sId,jdbcType=INTEGER}
-      and u_id = #{uId,jdbcType=INTEGER}
+    where s_id = #{sId,jdbcType=BIGINT}
+      and u_id = #{uId,jdbcType=BIGINT}
   </delete>
   <delete id="deleteByExample" parameterType="com.example.c_design.domain.BelongExample">
     delete from belong
@@ -93,7 +93,7 @@
   </delete>
   <insert id="insert" parameterType="com.example.c_design.domain.Belong">
     insert into belong (s_id, u_id)
-    values (#{sId,jdbcType=INTEGER}, #{uId,jdbcType=INTEGER})
+    values (#{sId,jdbcType=BIGINT}, #{uId,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.example.c_design.domain.Belong">
     insert into belong
@@ -107,10 +107,10 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="sId != null">
-        #{sId,jdbcType=INTEGER},
+        #{sId,jdbcType=BIGINT},
       </if>
       <if test="uId != null">
-        #{uId,jdbcType=INTEGER},
+        #{uId,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
@@ -124,10 +124,10 @@
     update belong
     <set>
       <if test="record.sId != null">
-        s_id = #{record.sId,jdbcType=INTEGER},
+        s_id = #{record.sId,jdbcType=BIGINT},
       </if>
       <if test="record.uId != null">
-        u_id = #{record.uId,jdbcType=INTEGER},
+        u_id = #{record.uId,jdbcType=BIGINT},
       </if>
     </set>
     <if test="_parameter != null">
@@ -136,8 +136,8 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update belong
-    set s_id = #{record.sId,jdbcType=INTEGER},
-      u_id = #{record.uId,jdbcType=INTEGER}
+    set s_id = #{record.sId,jdbcType=BIGINT},
+      u_id = #{record.uId,jdbcType=BIGINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

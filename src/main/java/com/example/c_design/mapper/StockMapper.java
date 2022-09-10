@@ -10,7 +10,7 @@ public interface StockMapper {
 
     int deleteByExample(StockExample example);
 
-    int deleteByPrimaryKey(@Param("gId") Integer gId, @Param("sId") Integer sId);
+    int deleteByPrimaryKey(@Param("gId") Long gId, @Param("sId") Long sId);
 
     int insert(Stock record);
 

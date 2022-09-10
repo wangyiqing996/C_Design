@@ -3,9 +3,9 @@ package com.example.c_design.domain;
 import java.util.Date;
 
 public class Buy {
-    private Integer cId;
+    private Long cId;
 
-    private Integer gId;
+    private Long gId;
 
     private Date bTime;
 
@@ -13,19 +13,19 @@ public class Buy {
 
     private Integer bNumber;
 
-    public Integer getcId() {
+    public Long getcId() {
         return cId;
     }
 
-    public void setcId(Integer cId) {
+    public void setcId(Long cId) {
         this.cId = cId;
     }
 
-    public Integer getgId() {
+    public Long getgId() {
         return gId;
     }
 
-    public void setgId(Integer gId) {
+    public void setgId(Long gId) {
         this.gId = gId;
     }
 

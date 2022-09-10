@@ -10,7 +10,7 @@ public interface BuyMapper {
 
     int deleteByExample(BuyExample example);
 
-    int deleteByPrimaryKey(@Param("cId") Integer cId, @Param("gId") Integer gId);
+    int deleteByPrimaryKey(@Param("cId") Long cId, @Param("gId") Long gId);
 
     int insert(Buy record);
 
@@ -18,7 +18,7 @@ public interface BuyMapper {
 
     List<Buy> selectByExample(BuyExample example);
 
-    Buy selectByPrimaryKey(@Param("cId") Integer cId, @Param("gId") Integer gId);
+    Buy selectByPrimaryKey(@Param("cId") Long cId, @Param("gId") Long gId);
 
     int updateByExampleSelective(@Param("record") Buy record, @Param("example") BuyExample example);
 

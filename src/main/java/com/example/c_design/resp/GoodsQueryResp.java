@@ -1,7 +1,7 @@
 package com.example.c_design.resp;
 
 public class GoodsQueryResp {
-    private Integer gId;
+    private Long gId;
 
     private String gName;
 
@@ -11,11 +11,11 @@ public class GoodsQueryResp {
 
     private Integer gNumber;
 
-    public Integer getgId() {
+    public Long getgId() {
         return gId;
     }
 
-    public void setgId(Integer gId) {
+    public void setgId(Long gId) {
         this.gId = gId;
     }
 
