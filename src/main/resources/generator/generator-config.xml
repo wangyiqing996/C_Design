@@ -44,10 +44,11 @@
 
 <!--                       <table tableName="user"/>-->
 <!--        <table tableName="belong"/>-->
+        <table tableName="goods"/>
 
 <!--        <table tableName="buy"/>-->
 
-        <table tableName="customer"/>
+<!--        <table tableName="customer"/>-->
 
 
     </context>
