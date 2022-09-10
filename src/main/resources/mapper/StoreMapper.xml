@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.c_design.mapper.StoreMapper">
+  <resultMap id="BaseResultMap" type="com.example.c_design.domain.Store">
+    <id column="s_id" jdbcType="INTEGER" property="sId" />
+    <result column="s_place" jdbcType="VARCHAR" property="sPlace" />
+    <result column="s_picture" jdbcType="VARCHAR" property="sPicture" />
+    <result column="s_introducetion" jdbcType="VARCHAR" property="sIntroducetion" />
+    <result column="s_name" jdbcType="VARCHAR" property="sName" />
+    <result column="s_kind" jdbcType="VARCHAR" property="sKind" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    s_id, s_place, s_picture, s_introducetion, s_name, s_kind
+  </sql>
+  <select id="selectByExample" parameterType="com.example.c_design.domain.StoreExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from store
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from store
+    where s_id = #{sId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from store
+    where s_id = #{sId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.c_design.domain.StoreExample">
+    delete from store
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.c_design.domain.Store">
+    insert into store (s_id, s_place, s_picture, 
+      s_introducetion, s_name, s_kind
+      )
+    values (#{sId,jdbcType=INTEGER}, #{sPlace,jdbcType=VARCHAR}, #{sPicture,jdbcType=VARCHAR}, 
+      #{sIntroducetion,jdbcType=VARCHAR}, #{sName,jdbcType=VARCHAR}, #{sKind,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.c_design.domain.Store">
+    insert into store
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sId != null">
+        s_id,
+      </if>
+      <if test="sPlace != null">
+        s_place,
+      </if>
+      <if test="sPicture != null">
+        s_picture,
+      </if>
+      <if test="sIntroducetion != null">
+        s_introducetion,
+      </if>
+      <if test="sName != null">
+        s_name,
+      </if>
+      <if test="sKind != null">
+        s_kind,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sId != null">
+        #{sId,jdbcType=INTEGER},
+      </if>
+      <if test="sPlace != null">
+        #{sPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="sPicture != null">
+        #{sPicture,jdbcType=VARCHAR},
+      </if>
+      <if test="sIntroducetion != null">
+        #{sIntroducetion,jdbcType=VARCHAR},
+      </if>
+      <if test="sName != null">
+        #{sName,jdbcType=VARCHAR},
+      </if>
+      <if test="sKind != null">
+        #{sKind,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.c_design.domain.StoreExample" resultType="java.lang.Long">
+    select count(*) from store
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update store
+    <set>
+      <if test="record.sId != null">
+        s_id = #{record.sId,jdbcType=INTEGER},
+      </if>
+      <if test="record.sPlace != null">
+        s_place = #{record.sPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sPicture != null">
+        s_picture = #{record.sPicture,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sIntroducetion != null">
+        s_introducetion = #{record.sIntroducetion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sName != null">
+        s_name = #{record.sName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sKind != null">
+        s_kind = #{record.sKind,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update store
+    set s_id = #{record.sId,jdbcType=INTEGER},
+      s_place = #{record.sPlace,jdbcType=VARCHAR},
+      s_picture = #{record.sPicture,jdbcType=VARCHAR},
+      s_introducetion = #{record.sIntroducetion,jdbcType=VARCHAR},
+      s_name = #{record.sName,jdbcType=VARCHAR},
+      s_kind = #{record.sKind,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.c_design.domain.Store">
+    update store
+    <set>
+      <if test="sPlace != null">
+        s_place = #{sPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="sPicture != null">
+        s_picture = #{sPicture,jdbcType=VARCHAR},
+      </if>
+      <if test="sIntroducetion != null">
+        s_introducetion = #{sIntroducetion,jdbcType=VARCHAR},
+      </if>
+      <if test="sName != null">
+        s_name = #{sName,jdbcType=VARCHAR},
+      </if>
+      <if test="sKind != null">
+        s_kind = #{sKind,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where s_id = #{sId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.c_design.domain.Store">
+    update store
+    set s_place = #{sPlace,jdbcType=VARCHAR},
+      s_picture = #{sPicture,jdbcType=VARCHAR},
+      s_introducetion = #{sIntroducetion,jdbcType=VARCHAR},
+      s_name = #{sName,jdbcType=VARCHAR},
+      s_kind = #{sKind,jdbcType=VARCHAR}
+    where s_id = #{sId,jdbcType=INTEGER}
+  </update>
+</mapper>

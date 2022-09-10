@@ -44,7 +44,7 @@
 
 <!--                       <table tableName="user"/>-->
 <!--        <table tableName="belong"/>-->
-        <table tableName="stock"/>
+        <table tableName="store"/>
 
 <!--        <table tableName="buy"/>-->
 
