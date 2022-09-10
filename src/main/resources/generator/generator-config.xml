@@ -45,7 +45,10 @@
 <!--                       <table tableName="user"/>-->
 <!--        <table tableName="belong"/>-->
 
-        <table tableName="buy"/>
+<!--        <table tableName="buy"/>-->
+
+        <table tableName="customer"/>
+
 
     </context>
 </generatorConfiguration>
