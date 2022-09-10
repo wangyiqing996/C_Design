@@ -52,9 +52,13 @@ public class StockService {
     /**
      * 增加
      */
+
+    //需要传输Id
     public void add(StockQueryReq req) {
         Stock stock = CopyUtil.copy(req, Stock.class);
-        stock.setsId( snowFlake.nextId());
+//        stock.setsId(req.getsId());
+//        stock.setgId(req.getgId());
+//        stock.setsId( snowFlake.nextId());
         stockMapper.insert(stock);
     }
 
