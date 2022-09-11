@@ -1,5 +1,6 @@
 package com.example.c_design.service;
 
+import com.example.c_design.domain.Buy;
 import com.example.c_design.domain.Stock;
 import com.example.c_design.domain.StockExample;
 import com.example.c_design.domain.StoreExample;
@@ -14,10 +15,12 @@ import com.example.c_design.utils.SnowFlake;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@Service
 public class StockService {
 
     private static final Logger LOG = LoggerFactory.getLogger(StockService.class);
@@ -27,6 +30,10 @@ public class StockService {
 
     @Resource
     private SnowFlake snowFlake;
+
+    public List<Stock> list() {
+        return stockMapper.selectByExample(null);
+    }
 
     public PageResp<StockQueryResp> list(StockQueryReq req) {
         StockExample stockExample = new StockExample();

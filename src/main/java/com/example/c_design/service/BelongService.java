@@ -3,6 +3,7 @@ package com.example.c_design.service;
 
 import com.example.c_design.domain.Belong;
 import com.example.c_design.domain.BelongExample;
+import com.example.c_design.domain.Goods;
 import com.example.c_design.mapper.BelongMapper;
 import com.example.c_design.req.BelongQueryReq;
 import com.example.c_design.resp.BelongQueryResp;
@@ -12,10 +13,12 @@ import com.example.c_design.utils.SnowFlake;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@Service
 public class BelongService {
 
     private static final Logger LOG = LoggerFactory.getLogger(BelongService.class);
@@ -25,6 +28,10 @@ public class BelongService {
 
     @Resource
     private SnowFlake snowFlake;
+
+    public List<Belong> list() {
+        return belongMapper.selectByExample(null);
+    }
 
     public PageResp<BelongQueryResp> list(BelongQueryReq req) {
           BelongExample belongExample = new BelongExample();

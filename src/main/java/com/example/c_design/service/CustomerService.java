@@ -2,6 +2,7 @@ package com.example.c_design.service;
 
 
 
+import com.example.c_design.domain.Buy;
 import com.example.c_design.domain.Customer;
 import com.example.c_design.domain.CustomerExample;
 import com.example.c_design.mapper.CustomerMapper;
@@ -13,10 +14,12 @@ import com.example.c_design.utils.SnowFlake;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@Service
 public class CustomerService {
 
     private static final Logger LOG = LoggerFactory.getLogger(CustomerService.class);
@@ -26,6 +29,10 @@ public class CustomerService {
 
     @Resource
     private SnowFlake snowFlake;
+
+    public List<Customer> list() {
+        return customerMapper.selectByExample(null);
+    }
 
     public PageResp<CustomerQueryResp> list(CustomerQueryReq req) {
         CustomerExample customerExample = new CustomerExample();

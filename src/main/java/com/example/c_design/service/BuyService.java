@@ -2,6 +2,7 @@ package com.example.c_design.service;
 
 import com.example.c_design.domain.Buy;
 import com.example.c_design.domain.BuyExample;
+import com.example.c_design.domain.Goods;
 import com.example.c_design.mapper.BuyMapper;
 import com.example.c_design.req.BuyQueryReq;
 import com.example.c_design.resp.BuyQueryResp;
@@ -11,10 +12,12 @@ import com.example.c_design.utils.SnowFlake;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@Service
 public class BuyService {
 
     private static final Logger LOG = LoggerFactory.getLogger(BuyService.class);
@@ -24,6 +27,10 @@ public class BuyService {
 
     @Resource
     private SnowFlake snowFlake;
+
+    public List<Buy> list() {
+        return buyMapper.selectByExample(null);
+    }
 
     public PageResp<BuyQueryResp> list(BuyQueryReq req) {
           BuyExample buyExample = new BuyExample();

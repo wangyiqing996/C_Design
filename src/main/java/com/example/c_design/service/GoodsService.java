@@ -13,10 +13,12 @@ import com.example.c_design.utils.SnowFlake;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@Service
 public class GoodsService {
 
     private static final Logger LOG = LoggerFactory.getLogger(GoodsService.class);
@@ -27,6 +29,10 @@ public class GoodsService {
     @Resource
     private SnowFlake snowFlake;
 
+
+    public List<Goods> list() {
+        return goodsMapper.selectByExample(null);
+    }
     public PageResp<GoodsQueryResp> list(GoodsQueryReq req) {
         GoodsExample goodsExample = new GoodsExample();
 //        StockExample.Criteria criteria = stockExample.createCriteria();
